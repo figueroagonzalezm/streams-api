@@ -3,6 +3,7 @@ package com.amigoscode.examples;
 
 import com.amigoscode.beans.Car;
 import com.amigoscode.mockdata.MockData;
+import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 
 import java.util.List;
@@ -25,8 +26,9 @@ public class GroupingData {
 
     }
 
+
     @Test
-    public void groupingAndCounting() throws Exception {
+    public void groupingAndCounting_String() throws Exception {
         List<String> names = List.of(
                 "John",
                 "John",
@@ -46,6 +48,18 @@ public class GroupingData {
                 );
 
         System.out.println(map);
+
+    }
+
+    @Test
+    public void GroupingAndCounting_Cars() throws Exception {
+        Map<String, Long> map = MockData.getCars()
+                .stream()
+                .collect(Collectors.groupingBy(Car::getMake, Collectors.counting()));
+
+        map.forEach((key, count) -> {
+            System.out.println("Make " + key + " | count: "+ count);
+        });
 
     }
 
