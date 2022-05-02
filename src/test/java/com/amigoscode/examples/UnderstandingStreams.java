@@ -21,7 +21,9 @@ public class UnderstandingStreams {
                         ArrayList::add,
                         ArrayList::addAll
                 );
+
         emails.forEach(System.out::println);
+
     }
 
     @Test

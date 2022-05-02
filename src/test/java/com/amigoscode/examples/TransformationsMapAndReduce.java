@@ -50,6 +50,7 @@ public class TransformationsMapAndReduce {
         int sub = Arrays.stream(integers).reduce(0, (a, b) -> a - b);
         System.out.println(sum);
         System.out.println(sub);
+
     }
 }
 
