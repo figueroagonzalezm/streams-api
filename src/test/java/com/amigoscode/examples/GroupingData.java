@@ -6,6 +6,7 @@ import com.amigoscode.mockdata.MockData;
 import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 
+import java.io.IOException;
 import java.util.List;
 import java.util.Map;
 import java.util.function.Function;
@@ -60,6 +61,18 @@ public class GroupingData {
         map.forEach((key, count) -> {
             System.out.println("Make " + key + " | count: "+ count);
         });
+
+    }
+
+    @Test
+    public void groupingAndPriceAverageByMake_Cars() throws IOException {
+        Map<String, Double> priceAverageByMaker = MockData.getCars()
+                .stream()
+                .collect(Collectors.groupingBy(Car::getMake, Collectors.averagingDouble(Car::getPrice)));
+
+        for(Map.Entry<String, Double> entry : priceAverageByMaker.entrySet()){
+            System.out.println("Maker: "+ entry.getKey() + ", priceAverage: "+ entry.getValue());
+        }
 
     }
 
