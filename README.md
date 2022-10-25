@@ -1,3 +1,6 @@
+Este repositorio tenía como fin recopilar ejemplos de Stream API. 
+Este proyecto se ha archivado debido a que será reemplazado por otro proyecto multimódulo que tendrá la recopilación de un conjunto mas ámplio de ejercicios. Por favor consultar el siguiente proyecto: https://github.com/figueroagonzalezm/learning-modules-mvn
+
 # Java Streams API
 https://amigoscode.com/p/java-streams
 ![cover](https://user-images.githubusercontent.com/40702606/137604079-5a73276f-a32a-4f03-adca-752f9a01adc2.png)
